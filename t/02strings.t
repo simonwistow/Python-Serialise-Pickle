@@ -1,4 +1,5 @@
-use Test::More qw(no_plan);
+use Test::More tests => 26;
+use strict;
 
 use_ok('Python::Serialise::Pickle');
 
@@ -16,7 +17,7 @@ is($ps->load(),"simple\nnew line");
 # TODO multiline and raw strings
 
 
-ok($pw = Python::Serialise::Pickle->new('>t/tmp'));
+ok(my $pw = Python::Serialise::Pickle->new('>t/tmp'));
 
 
 ok($pw->dump("'simple'"));

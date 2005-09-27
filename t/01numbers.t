@@ -1,4 +1,5 @@
-use Test::More qw(no_plan);
+use Test::More tests => 17;
+use strict;
 
 use_ok('Python::Serialise::Pickle');
 

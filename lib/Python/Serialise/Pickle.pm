@@ -551,7 +551,13 @@ Almost certainly lots and lots.
 
 =over 4
 
-=item Serialised objects
+=item No comments
+
+There were some, then they got written over during hacking.
+
+I am a bad person.
+
+=item Serialised objects and instances
 
 At the moment we don't deal with serialised objects very well. 
 Should probably just take or return a Python::Serialise::Pickle::Object 
@@ -563,6 +569,13 @@ Similar to Perl's undef but an object. At the moment we deal with it badly
 because if we returned undef then that would signify the end of the Pickle file.
 
 Should probably be returned as a special object or something.
+
+=item The difference between Tuples and Lists
+
+Python has tuples and list which differ in that the former is read only.
+
+Currently we ignore that and just return Perl arrays but there could possibly
+return some object - possibly a tied array.
 
 =item Longs
 
@@ -581,7 +594,7 @@ dictionaries but, for some reason, this one :
 
 causes it to fail.
 
-Chnaging it slightly starts it working again.
+Changing it slightly starts it working again.
 
 =item Bad reading of specs
 
